@@ -4,91 +4,128 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nonton Bareng Bae</title>
+    <link rel="icon" type="image/png" href="https://feeldreams.github.io/main-icon.png">
+    
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
             font-family: 'Poppins', sans-serif;
-            background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #fad0c4, #ffdde1);
-            background-size: 400% 400%;
-            animation: gradientBG 10s ease infinite;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            overflow: hidden;
+            background: linear-gradient(135deg, #FFB6C1, #FFD3E0);
             text-align: center;
+            margin: 0;
+            padding: 20px;
+            overflow: hidden;
             position: relative;
         }
 
         .container {
-            background: rgba(255, 255, 255, 0.8);
-            padding: 20px 40px;
+            background: white;
+            padding: 20px;
             border-radius: 15px;
-            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
-            opacity: 0;
-            animation: fadeIn 1s ease-out forwards;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            max-width: 400px;
+            position: relative;
+            z-index: 2;
         }
 
         h1 {
-            font-size: 24px;
+            color: #FF4081;
             font-weight: 600;
-            color: #ff4081;
         }
 
         p {
-            font-size: 16px;
             color: #555;
+            font-size: 16px;
+        }
+
+        .sticker img {
+            width: 100px;
+            margin: 10px 0;
+        }
+
+        .btn-container {
+            margin-top: 20px;
         }
 
         .btn {
             display: inline-block;
-            margin-top: 15px;
-            padding: 10px 20px;
-            background: #ff4081;
+            margin: 10px;
+            background: #FF4081;
             color: white;
+            padding: 12px 20px;
+            border-radius: 10px;
             text-decoration: none;
-            border-radius: 25px;
-            font-weight: bold;
-            transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease;
         }
 
         .btn:hover {
+            background: #E91E63;
             transform: scale(1.1);
-            box-shadow: 0px 4px 15px rgba(255, 64, 129, 0.4);
         }
 
-        .sticker {
-            width: 120px;
-            margin-top: 10px;
+        /* Dekorasi Floating Hearts */
+        .hearts::before, .hearts::after {
+            content: "💖";
+            font-size: 24px;
+            position: absolute;
+            animation: float 5s infinite ease-in-out;
         }
 
-        /* Animasi latar belakang */
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+        .hearts::before {
+            left: 20%;
+            animation-delay: 0s;
         }
 
-        /* Efek muncul */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
+        .hearts::after {
+            right: 20%;
+            animation-delay: 2s;
+        }
+
+        /* Dekorasi Floating Stars */
+        .stars::before, .stars::after {
+            content: "✨";
+            font-size: 18px;
+            position: absolute;
+            animation: float 6s infinite ease-in-out;
+        }
+
+        .stars::before {
+            left: 40%;
+            animation-delay: 1s;
+        }
+
+        .stars::after {
+            right: 40%;
+            animation-delay: 3s;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); opacity: 1; }
+            50% { transform: translateY(-20px); opacity: 0.6; }
+            100% { transform: translateY(0px); opacity: 1; }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Selamat Datang di Nonton Bareng Bae! 💖</h1>
-        <p>Website ini khusus untuk kita berdua, menikmati waktu bersama~</p>
-        <img src="https://i.imgur.com/Qj2DYB5.png" alt="Cute sticker" class="sticker">
-        <a href="episodes.html" class="btn">Lihat Episode</a>
+        <h1>Hai Bae! 💖</h1>
+        <p>Yuk, nonton bareng di sini! 🎬</p>
+
+        <div class="sticker">
+            <img src="https://feeldreams.github.io/pusn.gif" alt="Sticker Love">
+        </div>
+
+        <div class="btn-container">
+            <a href="daftar_episode.html" class="btn">Lihat Daftar Episode</a>
+            <a href="chat.html" class="btn">Buka Chat</a>
+        </div>
     </div>
+
+    <!-- Dekorasi tambahan -->
+    <div class="hearts"></div>
+    <div class="stars"></div>
+
 </body>
 </html>
