@@ -4,11 +4,110 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daftar Episode</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #ffdde1, #fad0c4);
+            background-size: 400% 400%;
+            animation: gradientBG 10s ease infinite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            position: relative;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px 40px;
+            border-radius: 15px;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1s ease-out forwards;
+            max-width: 400px;
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: 600;
+            color: #ff4081;
+        }
+
+        .episode-list {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        .episode-list li {
+            margin: 10px 0;
+        }
+
+        .episode-list a {
+            display: block;
+            text-decoration: none;
+            background: #ff4081;
+            color: white;
+            padding: 10px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .episode-list a:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 4px 15px rgba(255, 64, 129, 0.4);
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: #ff4081;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 4px 15px rgba(255, 64, 129, 0.4);
+        }
+
+        .sticker {
+            width: 100px;
+            display: block;
+            margin: 10px auto;
+        }
+
+        /* Animasi latar belakang */
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Efek muncul */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
 </head>
 <body>
     <div class="container">
         <h1>Pilih Episode 🎥</h1>
+        <img src="https://i.imgur.com/Qj2DYB5.png" alt="Cute sticker" class="sticker">
         <ul class="episode-list">
             <li><a href="watch.html?ep=1">Episode 1</a></li>
             <li><a href="watch.html?ep=2">Episode 2</a></li>
