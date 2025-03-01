@@ -92,6 +92,20 @@
         .btn-back:hover {
             background: #ff5277;
         }
+        /* Tombol Navigasi Episode */
+        .btn-nav {
+            display: inline-block;
+            margin: 10px;
+            padding: 8px 15px;
+            background: #ff7eb3;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .btn-nav:hover {
+            background: #ff5277;
+        }
     </style>
 </head>
 <body>
@@ -101,6 +115,13 @@
         <iframe id="videoFrame" frameborder="0" allowfullscreen></iframe>
     </div>
     
+    <div>
+        <!-- Tombol Navigasi Episode -->
+        <a href="#" id="prevEpisode" class="btn-nav">Episode Sebelumnya</a>
+        <a href="#" id="nextEpisode" class="btn-nav">Episode Selanjutnya</a>
+        <a href="episodes.html" class="btn-nav">Semua Episode</a>
+    </div>
+
     <br>
     <a href="episodes.html" class="btn-back">🔙 Kembali ke Daftar</a>
 
@@ -115,22 +136,22 @@
     <script>
         // Ambil parameter dari URL
         const urlParams = new URLSearchParams(window.location.search);
-        const episode = urlParams.get("ep");
+        const episode = parseInt(urlParams.get("ep")); // Convert to integer
 
         // Daftar video
         const videoLinks = {
-            "1": "https://www.youtube.com/embed/hasJei2WwLk",
-            "2": "https://www.youtube.com/embed/utMItVc1zSU",
-            "3": "https://www.youtube.com/embed/OROyJR94bHo",
-            "4": "https://www.youtube.com/embed/nLN1wgV_grA",
-            "5": "https://www.youtube.com/embed/XRs75TTXGTU",
-            "6": "https://www.youtube.com/embed/oIC4p9NlRqQ",
-            "7": "https://www.youtube.com/embed/pzOfCIg-Xt0",
-            "8": "https://www.youtube.com/embed/gVyunZ7V70o",
-            "9": "https://www.youtube.com/embed/BEyD6bXE1FA",
-            "10": "https://www.youtube.com/embed/a3SiKnkRxeg",
-            "11": "https://www.youtube.com/embed/AL8s3Xnlf_c",
-            "12": "https://www.youtube.com/embed/W-rbkQIhDFQ"
+            1: "https://www.youtube.com/embed/hasJei2WwLk",
+            2: "https://www.youtube.com/embed/utMItVc1zSU",
+            3: "https://www.youtube.com/embed/OROyJR94bHo",
+            4: "https://www.youtube.com/embed/nLN1wgV_grA",
+            5: "https://www.youtube.com/embed/XRs75TTXGTU",
+            6: "https://www.youtube.com/embed/oIC4p9NlRqQ",
+            7: "https://www.youtube.com/embed/pzOfCIg-Xt0",
+            8: "https://www.youtube.com/embed/gVyunZ7V70o",
+            9: "https://www.youtube.com/embed/BEyD6bXE1FA",
+            10: "https://www.youtube.com/embed/a3SiKnkRxeg",
+            11: "https://www.youtube.com/embed/AL8s3Xnlf_c",
+            12: "https://www.youtube.com/embed/W-rbkQIhDFQ"
         };
 
         // Tampilkan video sesuai episode
@@ -140,6 +161,19 @@
             document.getElementById("video-container").innerHTML = "<p>Episode tidak ditemukan.</p>";
         }
 
+        // Navigasi Episode Selanjutnya dan Sebelumnya
+        document.getElementById("nextEpisode").addEventListener("click", function() {
+            if (episode < 12) {
+                window.location.href = `watch.html?ep=${episode + 1}`;
+            }
+        });
+
+        document.getElementById("prevEpisode").addEventListener("click", function() {
+            if (episode > 1) {
+                window.location.href = `watch.html?ep=${episode - 1}`;
+            }
+        });
+        
         // Chat Box Logic
         const chatInput = document.getElementById("chatInput");
         const chatMessages = document.getElementById("chatMessages");
