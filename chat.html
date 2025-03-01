@@ -160,7 +160,7 @@
             messageInput.value = ''; // Clear input field
 
             // Redirect to WhatsApp with the message
-            const phoneNumber = "083111635530";
+            const phoneNumber = "+6283111635530";
             const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(messageText)}`;
             window.open(whatsappUrl, '_blank');
         }
