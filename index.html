@@ -64,16 +64,9 @@
             box-shadow: 0px 4px 15px rgba(255, 64, 129, 0.4);
         }
 
-        .gif {
-            width: 100px;
+        .sticker {
+            width: 120px;
             margin-top: 10px;
-            border-radius: 10px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .gif:hover {
-            transform: scale(1.1);
         }
 
         /* Animasi latar belakang */
@@ -88,59 +81,14 @@
             from { opacity: 0; transform: translateY(-20px); }
             to { opacity: 1; transform: translateY(0); }
         }
-
-        /* Partikel hiasan */
-        #particles {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Selamat Datang di Nonton Bareng Bae! 💖</h1>
         <p>Website ini khusus untuk kita berdua, menikmati waktu bersama~</p>
-        <img src="https://media.giphy.com/media/3o7abldj0b3rxrZUxW/giphy.gif" alt="Cute dancing GIF" class="gif">
+        <img src="https://i.imgur.com/Qj2DYB5.png" alt="Cute sticker" class="sticker">
         <a href="episodes.html" class="btn">Lihat Episode</a>
     </div>
-
-    <!-- Elemen dekorasi -->
-    <div id="particles"></div>
-
-    <script>
-        const particles = document.getElementById('particles');
-
-        for (let i = 0; i < 20; i++) {
-            let star = document.createElement('div');
-            star.classList.add('star');
-            star.style.width = `${Math.random() * 4 + 2}px`;
-            star.style.height = star.style.width;
-            star.style.left = `${Math.random() * 100}vw`;
-            star.style.top = `${Math.random() * 100}vh`;
-            star.style.animationDuration = `${Math.random() * 5 + 3}s`;
-            particles.appendChild(star);
-        }
-
-        const style = document.createElement('style');
-        style.innerHTML = `
-            .star {
-                position: absolute;
-                background: white;
-                border-radius: 50%;
-                opacity: 0.8;
-                animation: twinkle infinite linear;
-            }
-
-            @keyframes twinkle {
-                0%, 100% { opacity: 0.8; transform: scale(1); }
-                50% { opacity: 0.3; transform: scale(1.2); }
-            }
-        `;
-        document.head.appendChild(style);
-    </script>
 </body>
 </html>
