@@ -1,0 +1,88 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    color: #fff;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #ff758c;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #ff5e6c;
+}
+
+.episode-list {
+    list-style: none;
+    padding: 0;
+}
+
+.episode-list li {
+    margin: 10px 0;
+}
+
+.episode-list a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    background: rgba(255, 255, 255, 0.3);
+    padding: 10px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.episode-list a:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+/* Chat Box */
+.chat-box {
+    margin-top: 20px;
+    background: white;
+    color: black;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#messages {
+    height: 200px;
+    overflow-y: scroll;
+    text-align: left;
+}
+
+#chatInput {
+    width: 70%;
+    padding: 8px;
+}
+
+#sendBtn {
+    padding: 8px;
+    background: #ff758c;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
