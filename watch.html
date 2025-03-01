@@ -3,23 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nonton Bareng</title>
+    <title>Nonton Bareng 🎬</title>
     <link rel="stylesheet" href="style.css">
     <script defer src="script.js"></script>
 </head>
 <body>
     <div class="container">
         <h1>Nonton Bareng 🎬</h1>
-        <video id="videoPlayer" controls>
-            <source src="" type="video/mp4">
-            Browser kamu tidak mendukung pemutar video.
-        </video>
+        
+        <!-- Video Player -->
+        <div id="videoContainer">
+            <iframe id="videoPlayer" width="560" height="315" 
+                src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
+                gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" 
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <!-- Chat Box -->
         <div class="chat-box">
             <div id="messages"></div>
             <input type="text" id="chatInput" placeholder="Ketik pesan..." />
             <button id="sendBtn">Kirim</button>
         </div>
+
         <a href="episodes.html" class="btn">Kembali</a>
     </div>
+
+    <script>
+        // List video berdasarkan episode
+        const videoLinks = {
+            1: "https://www.youtube.com/embed/hasJei2WwLk",
+            2: "https://www.youtube.com/embed/utMItVc1zSU",
+            3: "https://www.youtube.com/embed/OROyJR94bHo",
+            4: "https://www.youtube.com/embed/nLN1wgV_grA",
+            5: "https://www.youtube.com/embed/XRs75TTXGTU",
+            6: "https://www.youtube.com/embed/oIC4p9NlRqQ",
+            7: "https://www.youtube.com/embed/pzOfCIg-Xt0",
+            8: "https://www.youtube.com/embed/gVyunZ7V70o",
+            9: "https://www.youtube.com/embed/BEyD6bXE1FA",
+            10: "https://www.youtube.com/embed/a3SiKnkRxeg",
+            11: "https://www.youtube.com/embed/AL8s3Xnlf_c",
+            12: "https://www.youtube.com/embed/W-rbkQIhDFQ"
+        };
+
+        // Ambil parameter 'ep' dari URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const episode = urlParams.get('ep');
+
+        // Ganti src video berdasarkan episode
+        if (videoLinks[episode]) {
+            document.getElementById("videoPlayer").src = videoLinks[episode];
+        } else {
+            document.getElementById("videoContainer").innerHTML = "<p>Episode tidak ditemukan!</p>";
+        }
+    </script>
 </body>
 </html>
